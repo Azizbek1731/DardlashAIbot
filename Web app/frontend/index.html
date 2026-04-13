@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DardlashAI — Sun'iy intellekt yordamida hissiy qo'llab-quvvatlash. Kamera orqali yuzingizdan hissiyotni aniqlaydi, ovozingizni tinglaydi va samimiy javob beradi.">
+    <title>DardlashAI — Hissiy Qo'llab-quvvatlash AI</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+    <link rel="stylesheet" href="/static/landing.css">
+</head>
+
+<body>
+    <!-- ═══════════ NAVBAR ═══════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">💜 DardlashAI</a>
+            <div class="nav-links">
+                <a href="#features">Imkoniyatlar</a>
+                <a href="#how">Qanday ishlaydi</a>
+                <a href="#safety">Xavfsizlik</a>
+                <a href="/static/chat.html" class="nav-cta">Boshlash →</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menyu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">🤖 Sun'iy intellekt yordamida</div>
+            <h1 class="hero-title">
+                His-tuyg'ularingizni<br>
+                <span class="gradient-text">tushunuvchi do'st</span>
+            </h1>
+            <p class="hero-subtitle">
+                DardlashAI yuzingizdagi hissiyotni kamera orqali aniqlaydi, gapirganingizni tinglaydi va o'zbek tilida samimiy, iliq javob beradi. Psixolog emas — shunchaki g'amxo'r do'stingiz.
+            </p>
+            <div class="hero-actions">
+                <a href="/static/chat.html" class="btn btn-primary">
+                    <span class="btn-icon">💬</span>
+                    Suhbatni boshlash
+                </a>
+                <a href="#how" class="btn btn-secondary">
+                    <span class="btn-icon">▶</span>
+                    Qanday ishlaydi?
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Hissiyot turi</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Doim ishga tayyor</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Maxfiy va xavfsiz</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <div class="hero-card-dot red"></div>
+                    <div class="hero-card-dot yellow"></div>
+                    <div class="hero-card-dot green"></div>
+                </div>
+                <div class="hero-chat-demo">
+                    <div class="demo-msg demo-user">
+                        <span class="demo-avatar">😰</span>
+                        <div class="demo-bubble demo-bubble-user">Imtihon haqida juda tashvishlanayapman...</div>
+                    </div>
+                    <div class="demo-msg demo-ai">
+                        <span class="demo-avatar">💜</span>
+                        <div class="demo-bubble demo-bubble-ai">Sizni tushunaman. Nafas oling — 4 songacha ichiga, 4 son ushlab turing, 6 songa chiqaring. Bu tanangizni tinchlantiradi. 💛</div>
+                    </div>
+                    <div class="demo-msg demo-user">
+                        <span class="demo-avatar">😊</span>
+                        <div class="demo-bubble demo-bubble-user">Rahmat, biroz yaxshi bo'ldi</div>
+                    </div>
+                    <div class="demo-msg demo-ai">
+                        <span class="demo-avatar">💜</span>
+                        <div class="demo-bubble demo-bubble-ai">Ajoyib! Siz kuchli odamsiz. Bir qadam, bir qadam — hamma narsa joyiga tushadi. 😊</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ FEATURES ═══════════ -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">✨ Imkoniyatlar</span>
+                <h2 class="section-title">Nima uchun DardlashAI?</h2>
+                <p class="section-subtitle">Oddiy chatbotdan ko'ra ko'proq — bu sizni haqiqatan tushunuvchi tizim</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📷</div>
+                    <h3>Yuz hissiyot aniqlash</h3>
+                    <p>Kamera orqali yuzingizdagi 8 xil hissiyotni real vaqtda aniqlaydi. Yuz atrofida kvadrat va emoji ko'rsatadi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Ovozli suhbat</h3>
+                    <p>Gapiring — tizim eshitadi va yozadi. 7 soniya jimlikdan keyin avtomatik javob beradi. Qo'l bilan yozish shart emas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔊</div>
+                    <h3>AI gapiradi</h3>
+                    <p>Javoblarni faqat o'qib o'tirmang — AI o'zi gapiradi. Hissiyotga qarab ovoz toni o'zgaradi: xursand, g'amgin, tinch.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Kontekstni tushunadi</h3>
+                    <p>Ish, o'qish, oila, sog'liq haqida gapirsangiz — tizim mavzuni aniqlaydi va shaxsiylashtirilgan javob beradi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Xavfsiz va ishonchli</h3>
+                    <p>Hech qachon diagnoz qo'ymaydi, dori tavsiya qilmaydi. Barcha javoblar xavfsizlik filtridan o'tadi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Suhbat xotirasi</h3>
+                    <p>Oxirgi 10 ta suhbatni eslab qoladi. Takroriy his-tuyg'ularni sezadi va yanada hamdardlik bilan javob beradi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ EMOTIONS ═══════════ -->
+    <section class="emotions-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">🎭 Hissiyotlar</span>
+                <h2 class="section-title">8 xil hissiyotni aniqlaydi</h2>
+                <p class="section-subtitle">Har bir hissiyot uchun maxsus strategiya va javob uslubi</p>
+            </div>
+            <div class="emotions-grid">
+                <div class="emotion-card">
+                    <span class="emotion-card-emoji">😊</span>
+                    <span class="emotion-card-name">Neytral</span>
+                    <span class="emotion-card-style">Do'stona ohang</span>
+                </div>
+                <div class="emotion-card">
+                    <span class="emotion-card-emoji">😄</span>
+                    <span class="emotion-card-name">Xursand</span>
+                    <span class="emotion-card-style">Ijobiy mustahkamlash</span>
+                </div>
+                <div class="emotion-card">
+                    <span class="emotion-card-emoji">😢</span>
+                    <span class="emotion-card-name">G'amgin</span>
+                    <span class="emotion-card-style">Hissiy dalda</span>
+                </div>
+                <div class="emotion-card">
+                    <span class="emotion-card-emoji">😰</span>
+                    <span class="emotion-card-name">Tashvishli</span>
+                    <span class="emotion-card-style">Tinchlantirish</span>
+                </div>
+                <div class="emotion-card">
+                    <span class="emotion-card-emoji">😴</span>
+                    <span class="emotion-card-name">Charchagan</span>
+                    <span class="emotion-card-style">Dam olish</span>
+                </div>
+                <div class="emotion-card">
+                    <span class="emotion-card-emoji">😠</span>
+                    <span class="emotion-card-name">G'azablangan</span>
+                    <span class="emotion-card-style">Tushunish</span>
+                </div>
+                <div class="emotion-card">
+                    <span class="emotion-card-emoji">😨</span>
+                    <span class="emotion-card-name">Qo'rqinchli</span>
+                    <span class="emotion-card-style">Xavfsizlik hissi</span>
+                </div>
+                <div class="emotion-card">
+                    <span class="emotion-card-emoji">😲</span>
+                    <span class="emotion-card-name">Hayratda</span>
+                    <span class="emotion-card-style">Qo'llab-quvvatlash</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ HOW IT WORKS ═══════════ -->
+    <section class="how-section" id="how">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">⚙️ Jarayon</span>
+                <h2 class="section-title">Qanday ishlaydi?</h2>
+                <p class="section-subtitle">3 ta oddiy qadam — shunchaki gapiring</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">📷</div>
+                    <h3>Kamerani yoqing</h3>
+                    <p>Brauzer kameraga ruxsat so'raydi. Yuzingizdagi hissiyot real vaqtda aniqlanadi va emoji bilan ko'rsatiladi.</p>
+                </div>
+                <div class="step-connector">
+                    <svg width="40" height="2"><line x1="0" y1="1" x2="40" y2="1" stroke="rgba(168,85,247,0.3)" stroke-width="2" stroke-dasharray="4,4"/></svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">🎤</div>
+                    <h3>Gapiring</h3>
+                    <p>Mikrofonni yoqing va o'zingizni his qilayotganingizni ayting. 7 soniya jimlikdan keyin xabar avtomatik yuboriladi.</p>
+                </div>
+                <div class="step-connector">
+                    <svg width="40" height="2"><line x1="0" y1="1" x2="40" y2="1" stroke="rgba(168,85,247,0.3)" stroke-width="2" stroke-dasharray="4,4"/></svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">💜</div>
+                    <h3>Javob oling</h3>
+                    <p>AI hissiyotingizga mos, iliq javob beradi va uni ovozi bilan o'qib beradi. Suhbat davom etadi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ SAFETY ═══════════ -->
+    <section class="safety-section" id="safety">
+        <div class="section-container">
+            <div class="safety-grid">
+                <div class="safety-content">
+                    <span class="section-badge">🛡️ Xavfsizlik</span>
+                    <h2 class="section-title">Sizning xavfsizligingiz — bizning ustuvorligimiz</h2>
+                    <div class="safety-list">
+                        <div class="safety-item">
+                            <span class="safety-icon">❌</span>
+                            <div>
+                                <strong>Diagnoz qo'ymaydi</strong>
+                                <p>"Sizda depression bor" kabi iboralar avtomatik bloklanadi</p>
+                            </div>
+                        </div>
+                        <div class="safety-item">
+                            <span class="safety-icon">❌</span>
+                            <div>
+                                <strong>Dori tavsiya qilmaydi</strong>
+                                <p>Hech qanday dori-darmon yoki tibbiy maslahat bermaydi</p>
+                            </div>
+                        </div>
+                        <div class="safety-item">
+                            <span class="safety-icon">❌</span>
+                            <div>
+                                <strong>Zararli gaplar aytmaydi</strong>
+                                <p>"Shunchaki chida" yoki "bu katta gap emas" kabi iboralar filtlanadi</p>
+                            </div>
+                        </div>
+                        <div class="safety-item">
+                            <span class="safety-icon">✅</span>
+                            <div>
+                                <strong>Ma'lumotlar saqlanmaydi</strong>
+                                <p>Suhbat faqat sessiya davomida mavjud. Hech qayerga yuborilmaydi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="safety-visual">
+                    <div class="safety-shield">
+                        <span>🛡️</span>
+                    </div>
+                    <div class="safety-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="cta-section">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Tayyor bo'lsangiz — boshlaylik</h2>
+                <p class="cta-subtitle">Shunchaki kamerangizni yoqing va gapiring. Men tinglashga tayyorman.</p>
+                <a href="/static/chat.html" class="btn btn-primary btn-large">
+                    <span class="btn-icon">💬</span>
+                    Hozir boshlash
+                </a>
+                <p class="cta-note">Hech qanday ro'yxatdan o'tish kerak emas. Bepul. Maxfiy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="landing-footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-logo">💜 DardlashAI</span>
+                    <p>Chunki har bir his-tuyg'u muhim, va siz yolg'iz emassiz.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Sahifalar</h4>
+                    <a href="#features">Imkoniyatlar</a>
+                    <a href="#how">Qanday ishlaydi</a>
+                    <a href="#safety">Xavfsizlik</a>
+                    <a href="/static/chat.html">Suhbat</a>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Texnologiya</h4>
+                    <a href="#">FastAPI</a>
+                    <a href="#">face-api.js</a>
+                    <a href="#">Web Speech API</a>
+                    <a href="#">Python</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 DardlashAI. Barcha huquqlar himoyalangan.</span>
+                <span class="footer-disclaimer">⚠️ DardlashAI psixolog emas. Jiddiy yordam uchun mutaxassisga murojaat qiling.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════ SCROLL ANIMATIONS ═══════════ -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.querySelector('.nav-links');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile nav on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Scroll reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.feature-card, .emotion-card, .step-card, .safety-item, .hero-content, .hero-visual').forEach(el => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+
+</html>

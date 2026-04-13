@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="DardlashAI — Sizning hissiy qo'llab-quvvatlash yordamchingiz. Kamera va ovoz bilan ishlaydi.">
+    <title>DardlashAI — Hissiy Qo'llab-quvvatlash</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sarlavha -->
+        <header class="app-header">
+            <h1 class="app-logo">
+                <span class="logo-icon">💜</span>DardlashAI
+            </h1>
+            <p class="app-tagline">Kamera va ovoz bilan hissiy qo'llab-quvvatlash</p>
+            <div class="header-divider"></div>
+        </header>
+
+        <!-- Asosiy tartib: Kamera + Chat yonma-yon -->
+        <div class="main-layout">
+            <!-- Chap tomon: Kamera -->
+            <div class="camera-panel">
+                <div class="camera-container" id="cameraContainer">
+                    <video id="cameraVideo" autoplay muted playsinline></video>
+                    <canvas id="cameraCanvas"></canvas>
+                    <div class="camera-overlay" id="cameraOverlay">
+                        <div class="camera-loading">
+                            <div class="spinner"></div>
+                            <span>Model yuklanmoqda...</span>
+                        </div>
+                    </div>
+                    <!-- Katta emoji ko'rsatkichi -->
+                    <div class="live-emoji" id="liveEmoji">😊</div>
+                    <!-- Hissiyot badge -->
+                    <div class="emotion-badge" id="emotionBadge">
+                        <span id="emotionBadgeEmoji">😊</span>
+                        <span id="emotionBadgeText">Neytral</span>
+                        <span class="emotion-confidence" id="emotionConfidence">100%</span>
+                    </div>
+                </div>
+
+                <!-- Mikrofon boshqaruvi -->
+                <div class="mic-controls">
+                    <button class="mic-btn" id="micBtn" title="Gapiring — ovozingiz yoziladi">
+                        <span class="mic-icon" id="micIcon">🎤</span>
+                        <span class="mic-text" id="micText">Gapirish boshlash</span>
+                    </button>
+                    <div class="mic-status" id="micStatus" style="display: none;">
+                        <div class="mic-wave">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="mic-timer" id="micTimer">Tinglanmoqda...</span>
+                    </div>
+                </div>
+
+                <!-- Gapirish matni (real-time) -->
+                <div class="speech-preview" id="speechPreview" style="display: none;">
+                    <div class="speech-text" id="speechText"></div>
+                    <div class="silence-bar">
+                        <div class="silence-progress" id="silenceProgress"></div>
+                    </div>
+                    <span class="silence-hint">7 soniya jimlik — avtomatik yuboriladi</span>
+                </div>
+            </div>
+
+            <!-- O'ng tomon: Chat -->
+            <div class="chat-panel">
+                <!-- Suhbat maydoni -->
+                <div class="chat-area" id="chatArea">
+                    <div class="welcome-screen" id="welcomeScreen">
+                        <div class="welcome-emoji">🤗</div>
+                        <h2 class="welcome-title">Salom!</h2>
+                        <p class="welcome-subtitle">
+                            Kamerangiz va mikrofoningizni yoqing. Men yuzingizdagi hissiyotni aniqlayman va
+                            gapirganingizni eshitaman. Shunchaki gapiring — 7 soniya to'xtaganingizda javob beraman.
+                        </p>
+                        <div class="welcome-chips">
+                            <button class="welcome-chip" data-text="Oxirgi paytlarda hamma narsadan tashvishlanayapman"
+                                data-emotion="anxious">😰 Tashvishlanayapman</button>
+                            <button class="welcome-chip" data-text="Bugun og'ir kun bo'ldi" data-emotion="sad">😢 Og'ir
+                                kun</button>
+                            <button class="welcome-chip" data-text="Charchadim" data-emotion="tired">😴
+                                Charchadim</button>
+                            <button class="welcome-chip" data-text="Bugun ajoyib narsa bo'ldi!" data-emotion="happy">😄
+                                Yaxshi yangilik</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yozish indikatori -->
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+
+                <!-- AI gapirish indikatori + to'xtatish tugmasi -->
+                <div class="ai-speaking" id="aiSpeaking" style="display: none;">
+                    <div class="ai-speaking-wave">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <span>AI gapirmoqda...</span>
+                    <button class="stop-speak-btn" id="stopSpeakBtn">⏹ To'xtatish</button>
+                </div>
+
+                <!-- Kiritish maydoni -->
+                <div class="input-area">
+                    <div class="input-wrapper">
+                        <div class="text-input-container">
+                            <textarea class="text-input" id="userInput" placeholder="Yoki bu yerga yozing..."
+                                rows="1"></textarea>
+                        </div>
+                        <button class="send-btn" id="sendBtn" title="Yuborish">↑</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastki qism -->
+        <footer class="app-footer">
+            <span>DardlashAI psixolog emas. Jiddiy yordam uchun mutaxassisga murojaat qiling. 💛</span>
+            <a class="footer-link" id="resetBtn">Tozalash</a>
+        </footer>
+    </div>
+
+    <!-- Bildirishnoma -->
+    <div class="toast" id="toast"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
